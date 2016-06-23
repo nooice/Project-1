@@ -21,18 +21,26 @@ var a = [
     {quote: "Do. Or do not. There is no try.", 
      source: "Yoda", 
      citation: "The Empire Strikes Back", 
-     year: "1980",
+     date: "1980",
      buttonText: "Force push for quote"},
     {quote: "I'm not superstitious, but I am a little stitious.", 
      source: "Michael Scott", 
      citation: "The Office", 
-     year: "2007"},
+     date: "2007"},
     {quote: "Float like a butterfly, sting like a bee.", 
      source: "Muhammad Ali", 
-     year: "1974",
+     date: "1974",
      buttonText: "Punch here for quote"},
     {quote: "The problem with quotes found on the internet is that they are often not true", 
-     source: "Abraham Lincoln"}
+     source: "Abraham Lincoln"},
+    {quote: "Design is not just what it looks like and feels like. Design is how it works.",
+     source: "Steve Jobs",},
+    {quote: "I'd rather do nothin' with you than somethin' with anybody else.",
+     source: 'Theodore "Beaver" Cleaver',
+     citation: "Leave It to Beaver",
+     date: "1957–1963",
+     buttonText: "Click for more"}
+    
 ];
 
 //creates an array of random numbers -- length of array is set by 'n'
@@ -57,12 +65,12 @@ ranNum2 = randPerm(colorArray.length);
 
 //function takes number from quoteSelect() then builds the HTML code to paste into the index.html file
 function printQuote(x) {
-    if (a[x].hasOwnProperty('quote') && a[x].hasOwnProperty('source') && a[x].hasOwnProperty('citation') && a[x].hasOwnProperty('year')){
-        postHTML = '<p class="quote">' + a[x].quote + '</p><p class="source">' + a[x].source + '<span class="citation">' + a[x].citation + '</span><span class="year">' + a[x].year + '</span></p>';
+    if (a[x].hasOwnProperty('quote') && a[x].hasOwnProperty('source') && a[x].hasOwnProperty('citation') && a[x].hasOwnProperty('date')){
+        postHTML = '<p class="quote">' + a[x].quote + '</p><p class="source">' + a[x].source + '<span class="citation">' + a[x].citation + '</span><span class="year">' + a[x].date + '</span></p>';
     }else if (a[x].hasOwnProperty('quote') && a[x].hasOwnProperty('source') && a[x].hasOwnProperty('citation')){
         postHTML = '<p class="quote">' + a[x].quote + '</p><p class="source">' + a[x].source + '<span class="citation">' + a[x].citation + '</span></p>';
-    }else if (a[x].hasOwnProperty('quote') && a[x].hasOwnProperty('source') && a[x].hasOwnProperty('year')){
-        postHTML = '<p class="quote">' + a[x].quote + '</p><p class="source">' + a[x].source + '<span class="year">' + a[x].year + '</span></p>';
+    }else if (a[x].hasOwnProperty('quote') && a[x].hasOwnProperty('source') && a[x].hasOwnProperty('date')){
+        postHTML = '<p class="quote">' + a[x].quote + '</p><p class="source">' + a[x].source + '<span class="year">' + a[x].date + '</span></p>';
     }else if (a[x].hasOwnProperty('quote') && a[x].hasOwnProperty('source')){
         postHTML = '<p class="quote">' + a[x].quote + '</p><p class="source">' + a[x].source + '</p>';
     } else {postHTML = '<p class="quote">' + a[x].quote + '</p>';}
